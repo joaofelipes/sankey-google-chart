@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/sankey/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/sankey/css/style.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="/sankey/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="/sankey/js/engine.js"></script>
+<script src="/sankey/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="chartpanel" >
+      <div id="sankey_multiple" style="width: 100%; height: 100%"></div>
+  </div>
+
+  <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Alterar Grafico</button>
+  <button class="btn btn-primary manage-bt" data-toggle="modal" data-target=".bd-gerenciar-modal-lg">Gerenciar</button>
+  <!-- Modal Change Data -->
+  <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content mng-panel-content">
+            <!--Change Panel-->
+            <div class="center-block change-panel">
+                <textarea class="form-control" id="txtdatasource"></textarea>
+                <p>
+                  <button id="chartbtn" type = "button" class = "btn btn-success btn-chart">Criar Grafico</button>
+                  <button id="rstbtn" type = "button" class = "btn btn-danger btn-chart">Reset!</button>
+                </p>
+                <div class="optpanel">
+                  <div class="checkbox fixchkbox">
+                    <label><input type="checkbox" id="chkcolorlinks" value="">Colorir Links</label>
+                  </div>
+                  <select class="form-control optpicker" id="linktype" disabled="disabled">
+                    <option>source</option>
+                    <option>target</option>
+                    <option>gradient</option>
+                  </select>
+                
+                  <form class="form-horizontal">
+                    <div class="form-group txtfields">
+                      <label class="col-sm-2 control-label lb-sm">NodePadding:</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" id="inputpad" type="text" value="2">
+                      </div>
+                      <label class="col-sm-2 control-label lb-sm">NodeWidth:</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" id="inputwid" type="text" value="10">
+                      </div>
+                      <label class="col-sm-2 control-label lb-sm">FontSize:</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" id="inputfsize" type="text" value="10">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </div>
+            <!--Change Panel-->
+      </div>
+    </div>
+  </div>
+  <!-- Modal Change Data -->
+  
+  <!-- Modal Gerenciar -->
+  <div class="modal fade bd-gerenciar-modal-lg" id="ManageModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content mng-panel-content">
+          <div class="center-block mng-panel">
+            <select multiple class="form-control mng-select" id="ManageSelect">
+            </select>
+            <button class="btn btn-primary btn-chart btnMngDelete">Excluir</button>
+            <button class="btn btn-primary btn-chart btnMngLoad">Carregar</button>
+            <form class="form-inline">
+              <div class="form-group mng-savebox">
+                 <input type="text" class="form-control" id="inputSaveAs">
+                 <button class="btn btn-success btn-chart btnMngSave" disabled>Salvar</button>
+              </div>
+            </form>
+        </div>           
+      </div>
+    </div>
+  </div>        
+
+</div> 
+</body>
+</html>
+
+
+
+
